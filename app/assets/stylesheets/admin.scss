@@ -7,94 +7,114 @@ $color_rgb: rgba(0,0,0,.5);
 $color_rgb_b: rgba(0,0,0,.3);
 $color_background2: #222;
 $backgroud_login: #f7f7f7;
+$color_rgb_a: rgba(0,0,0,.05);
+$color_brackground_content: #299be4;
+$color_bacground_contact: #1c8cd7;
+$color_bacground_contact_a: #03A9F4;
+$color_table_btn: #566787;
+$color_background_active_li: #0397d6;
+$color_paginate: #ccc;
+$color_paginate_li: #666;
+$color_table_title: #f2f2f2;
+$color_paginatew: #999;
+$color_text_danger: #ff5b5b;
+$color_text_warning: #FFC107;
+$color_text_info: #62c9e8;
+$color_text_success: #10c469;
+$color_table_trw: #e9e9e9;
+$color_tbodya: #fcfcfc;
+$color_table_hover: #f5f5f5;
+$color_table_hovera: #2196F3;
+$color_table_hver: #F44336;
+
 
 @media(min-width:768px) {
-    body {
-        margin-top: 50px;
-    }
+  body {
+    margin-top: 50px;
+  }
 }
 #wrapper {
-    padding-left: 0;
+  padding-left: 0;
 }
 #page-wrapper {
-    width: 100%;
-    padding: 0;
-    background-color: $color_page_wrapper;
+  width: 100%;
+  padding: 0;
+  background-color: $color_page_wrapper;
 }
 @media(min-width:768px) {
-    #wrapper {
-        padding-left: 225px;
-    }
+  #wrapper {
+    padding-left: 225px;
+  }
 
-    #page-wrapper {
-        padding: 22px 10px;
-    }
+  #page-wrapper {
+    padding: 22px 10px;
+  }
 }
 
 /* Top Navigation */
 .top-nav {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 .top-nav>li {
-    display: inline-block;
-    float: left;
+  display: inline-block;
+  float: left;
 }
 .top-nav>li>a {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    line-height: 20px;
-    color: $color_page_wrapper;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 20px;
+  color: $color_page_wrapper;
 }
 .top-nav>li>a:hover,
 .top-nav>li>a:focus,
 .top-nav>.open>a,
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
-    color: $color_page_wrapper;
-    background-color: $color_background;
+  color: $color_page_wrapper;
+  background-color: $color_background;
 }
 
 /* Side Navigation */
 @media(min-width:768px) {
-    .side-nav {
-        position: fixed;
-        top: 60px;
-        left: 225px;
-        width: 225px;
-        margin-left: -225px;
-        border: none;
-        border-radius: 0;
-        border-top: 1px $color_rgb solid;
-        overflow-y: auto;
-        background-color: #222;
-        /*background-color: #5A6B7D;*/
-        bottom: 0;
-        overflow-x: hidden;
-        padding-bottom: 40px;
-    }
-    .side-nav>li>a {
-        width: 225px;
-        border-bottom: 1px $color_rgb_b solid;
-    }
-    .side-nav li a:hover,
-    .side-nav li a:focus {
-        outline: none;
-        background-color: $color_background !important;
-    }
+  .side-nav {
+    position: fixed;
+    top: 60px;
+    left: 225px;
+    width: 225px;
+    margin-left: -225px;
+    border: none;
+    border-radius: 0;
+    border-top: 1px $color_rgb solid;
+    overflow-y: auto;
+    background-color: #222;
+    /*background-color: #5A6B7D;*/
+    bottom: 0;
+    overflow-x: hidden;
+    padding-bottom: 40px;
+  }
+  .side-nav>li>a {
+    width: 225px;
+    border-bottom: 1px $color_rgb_b solid;
+  }
+  .side-nav li a:hover,
+  .side-nav li a:focus {
+    outline: none;
+    background-color: $color_background !important;
+  }
 }
 .side-nav>li>ul {
-    padding: 0;
-    border-bottom: 1px $color_rgb_b solid;
+  padding: 0;
+  border-bottom: 1px $color_rgb_b solid;
 }
 .side-nav>li>ul>li>a {
-    display: block;
-    padding: 10px 15px 10px 38px;
-    text-decoration: none;
-    /*color: #999;*/
-    color: $color_page_wrapper;
+  display: block;
+  padding: 10px 15px 10px 38px;
+  text-decoration: none;
+  /*color: #999;*/
+  color: $color_page_wrapper;
 }
 .side-nav>li>ul>li>a:hover {
-    color: $color_page_wrapper;
+  color: $color_page_wrapper;
 }
 .navbar .nav > li > a > .label {
   -webkit-border-radius: 50%;
@@ -115,26 +135,215 @@ $backgroud_login: #f7f7f7;
   top: 10px;
 }
 .navbar-brand {
-    padding: 5px 15px;
+  padding: 5px 15px;
 }
 .login-form {
-    width: 340px;
-    margin: 50px auto;
+  width: 340px;
+  margin: 50px auto;
 }
 .login-form form {
-    margin-bottom: 15px;
-    background: $backgroud_login;
-    box-shadow: 0px 2px 2px $color_rgb_b;
-    padding: 30px;
+  margin-bottom: 15px;
+  background: $backgroud_login;
+  box-shadow: 0px 2px 2px $color_rgb_b;
+  padding: 30px;
 }
 .login-form h2 {
-    margin: 0 0 15px;
+  margin: 0 0 15px;
 }
 .form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
+  min-height: 38px;
+  border-radius: 2px;
 }
 .btn {
-    font-size: 15px;
-    font-weight: bold;
+  font-size: 15px;
+  font-weight: bold;
 }
+
+/*content*/
+.table-wrapper {
+  background: $color_page_wrapper;
+  padding: 20px 25px;
+  margin: 30px 0;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px $color_rgb_a;
+}
+.table-title {
+  padding-bottom: 15px;
+  background: $color_brackground_content;
+  color: $color_page_wrapper;
+  padding: 16px 30px;
+  margin: -20px -25px 10px;
+  border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+  margin: 5px 0 0;
+  font-size: 24px;
+}
+.table-title .btn {
+  color: $color_table_btn;
+  float: right;
+  font-size: 13px;
+  background: $color_page_wrapper;
+  border: none;
+  min-width: 50px;
+  border-radius: 2px;
+  border: none;
+  outline: none !important;
+  margin-left: 10px;
+}
+.table-title .btn:hover, .table-title .btn:focus {
+  color: $color_table_btn;
+  background: $color_table_title;
+}
+.table-title .btn i {
+  float: left;
+  font-size: 21px;
+  margin-right: 5px;
+}
+.table-title .btn span {
+  float: left;
+  margin-top: 2px;
+}
+table.table tr th, table.table tr td {
+  border-color: $color_table_trw;
+  padding: 12px 15px;
+  vertical-align: middle;
+}
+table.table tr th:first-child {
+  width: 60px;
+}
+table.table tr th:last-child {
+  width: 100px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: $color_tbodya;
+}
+table.table-striped.table-hover tbody tr:hover {
+  background: $color_table_hover;
+}
+table.table th i {
+  font-size: 13px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+table.table td:last-child i {
+  opacity: 0.9;
+  font-size: 22px;
+  margin: 0 5px;
+}
+table.table td a {
+  font-weight: bold;
+  color: $color_table_btn;
+  display: inline-block;
+  text-decoration: none;
+}
+table.table td a:hover {
+  color: $color_table_hovera;
+}
+table.table td a.settings {
+  color: $color_table_hovera;
+}
+table.table td a.delete {
+  color: $color_table_hver;
+}
+table.table td i {
+  font-size: 19px;
+}
+table.table .avatar {
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.status {
+  font-size: 30px;
+  margin: 2px 2px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 10px;
+}
+.text-success {
+  color: $color_text_success;
+}
+.text-info {
+  color: $color_text_info;
+}
+.text-warning {
+  color: $color_text_warning;
+}
+.text-danger {
+  color: $color_text_danger;
+}
+.pagination {
+  float: right;
+  margin: 0 0 5px;
+}
+.pagination li a {
+  border: none;
+  font-size: 13px;
+  min-width: 30px;
+  min-height: 30px;
+  color: $color_paginatew;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 2px !important;
+  text-align: center;
+  padding: 0 6px;
+}
+.pagination li a:hover {
+  color: $color_paginate_li;
+}
+.pagination li.active a, .pagination li.active a.page-link {
+  background: $color_bacground_contact_a;
+}
+.pagination li.active a:hover {
+  background: $color_background_active_li;
+}
+.pagination li.disabled i {
+  color: $color_paginate;
+}
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px
+}
+.hint-text {
+  float: left;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+/*form add*/
+.contact-form {
+  padding: 50px;
+  margin: 30px 0;
+}
+.contact-form h1 {
+  text-transform: uppercase;
+  margin: 0 0 15px;
+}
+.contact-form .form-control, .contact-form .btn  {
+  min-height: 38px;
+  border-radius: 2px;
+}
+.contact-form .btn-primary {
+  min-width: 150px;
+  background: $color_brackground_content;
+  border: none;
+}
+.contact-form .btn-primary:hover {
+  background: $color_bacground_contact;
+}
+.contact-form label {
+  opacity: 0.9;
+}
+.contact-form textarea {
+  resize: vertical;
+}
+.hint-text {
+  font-size: 15px;
+  padding-bottom: 15px;
+  opacity: 0.8;
+}
+.bs-example {
+  margin: 20px;
+}
+

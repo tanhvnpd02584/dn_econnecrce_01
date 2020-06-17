@@ -1,0 +1,35 @@
+<h1><%= t "products.product_new" %></h1>
+<%= form_for [:admin, @product] do |f| %>
+  <%= render "admin/shared/error_messages", object: f.object%>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.all, :id, :name,
+     {prompt: t("products.text_select")}, {class: "form-control"} %>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= f.label :quantity %>
+        <%= f.text_field :quantity, id: :quantity, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= f.label :unit_price %>
+        <%= f.text_field :unit_price, id: :price, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, id: :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :image, accept: Settings.file_accept, class: "form-control" %>
+  </div>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

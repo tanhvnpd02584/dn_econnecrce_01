@@ -1,4 +1,28 @@
 vi:
+  admin:
+    title_login: "login"
+    title: "Admin Beers"
+    text_page: "Login"
+    text_menu_user: "User manager"
+    text_menu_product: "Products manager"
+    text_menu_order: "Order manager"
+    text_menu_request: "Request manager"
+    text_button_log_out: "Logout"
+    text_welcom_admin: "Welcom Admin"
+  admin_products:
+    title_table: "Product Management"
+    text_button_add: "Add new product"
+    text_button_export: "Export to excel"
+    text_dau: "#"
+    text_name: "Name"
+    text_category: "Category"
+    text_unit_price: "Unit price"
+    text_quantity: "Quantity"
+    text_descriptiom: "Description"
+    text_edit: "Edit"
+  login:
+    text_login_failed: "Login failed invalid username or password"
+    text_login_not_found: "User not found"
   layout_header:
     text_phone: "Phone: +01 256 25 235"
     text_email: "Eamil: omgod234@sun-asterisk"
@@ -6,10 +30,12 @@ vi:
     text_order: "Cart"
     text_contact: "Contact"
     text_menu_home: "Home"
-    text_menu_blog: "Category"
+    text_menu_category: "Category"
     text_menu_page: "Pages"
     text_menu_contact: "Contact"
     main_title: "Cheers"
+    text_link_log_out: "Log out"
+    text_link_log_in: "Login"
   layout_footer:
     text_top_product: "Top Products"
     text_quick_links: "Quick Links"
@@ -43,13 +69,47 @@ vi:
     text_price: "$120.70"
     text_product: "BudWeirser"
     text_title: "Home"
-
-  model:
-    error_email: "email can't be more than 255 character"
-    error_name: "Name can't be more than 50 character"
-    error_email_pattern: "Email is in valid, should be abc@gmail.com"
-    error_phone_number: "Phone number has >=10 and <= 11 character"
-    error_phone_pattern: "phone should be 0941789420"
   application:
     text_english: "English"
     text_vietnamese: "Vietnamese"
+  products:
+    title_page: "Products"
+    product_price: "USD"
+    text_product_new: "New Product"
+    text_product_name: "Product Name"
+    text_product_category: "Product Category"
+    text_product_price: "Price"
+    text_product_quantity: "Quantity"
+    text_product_description: "Description"
+    text_button_add: "Add"
+    text_success_product: "Product added"
+    text_select: "Select a category"
+  activerecord:
+    models:
+      attributes:
+        product:
+          name: "Name"
+          quantity: "Quantity"
+          unit_price: "Price"
+          category: "Category"
+  errors_messages:
+    text_error_form: "The form contains"
+    text_error: "error"
+  activerecord:
+    errors:
+      models:
+        user: # or namespace/model_name
+          attributes:
+            email:
+              bad_email: "email can't be more than 255 character, should be omgod234@gmail.com"
+            name:
+              bad_name: "Name can't be more than 50 character"
+            phone_number:
+              bad_phone_number: "Phone number has >=10 and <= 11 character, should be 0941789420"
+        product:
+          attributes:
+            name:
+              bad_name: "Name can't be more than 50 character"
+            image:
+              bad_image: "Image should less than 5MB"
+
