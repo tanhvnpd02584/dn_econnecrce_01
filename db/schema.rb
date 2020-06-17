@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_06_21_230040) do
     t.index ["purchase_id"], name: "index_detailpurchases_on_purchase_id"
   end
 
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "category_id", null: false

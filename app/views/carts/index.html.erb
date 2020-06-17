@@ -1,0 +1,59 @@
+<% provide(:title, t("carts.text_cart_title")) %>
+<section class="cart_area">
+  <div class="container">
+    <div class="cart_inner">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"><%= t "carts.text_column_image" %></th>
+              <th scope="col"><%= t "carts.text_column_name" %></th>
+
+              <th scope="col"><%= t "carts.text_column_price" %></th>
+              <th scope="col"><%= t "carts.text_column_quantity" %></th>
+              <th scope="col"><%= t "carts.text_column_total" %></th>
+              <th scope="col"><%= t "carts.text_column_edit" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% session[:cart].each do |id, quantity| %>
+              <% find_product id %>
+              <tr>
+                <td>
+                  <div class="media">
+                    <div class="d-flex">
+                      <%= image_tag @product.display_image if @product.image.attached? %>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p><%= @product.name %></p>
+                </td>
+                <td>
+                  <h5><%= number_to_currency(@product.unit_price) %></h5>
+                </td>
+                <td>
+                  <button class="increase items-count" type="button">
+                    <%= link_to t("carts.cart_sub"), cart_sub_item_path(id), method: :post, id: "link-add" %>
+                  </button>
+                  <div class="product_count">
+                    <h3> <%= quantity %></h>
+                    </div>
+                    <button class="increase items-count" type="button">
+                      <%= link_to t("carts.cart_increse"), cart_add_item_path(id), method: :post, id: "link-add"%>
+                    </button>
+                  </td>
+                  <td>
+                    <h5><%= number_to_currency(total(quantity, @product.unit_price)) %></h5>
+                  </td>
+                  <td>
+                    <%= link_to "Delete", remove_from_cart_path(id), method: :delete %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>

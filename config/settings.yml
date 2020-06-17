@@ -10,4 +10,5 @@ price_less: 1000000
 file_accept: "image/jpeg,image/gif,image/png"
 file_valid: ["image/jpeg", "image/gif", "image/png"]
 per_page: 12
+per_page_user: 9
 image_display: 200

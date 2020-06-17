@@ -1,13 +1,16 @@
 class Admin::ProductsController < AdminsController
-  before_action :logged_in_user, except: %i(idex destroy)
+  before_action :logged_in_user, except: %i(show index destroy)
+  before_action :load_product, except: %i(create new index)
   before_action :find_category, only: %i(create update)
-  before_action :load_product, only: %i(edit update )
-  before_action :admin_user, only: %i(create update edit)
-  def index
+
+   def index
     @products = Product
                   .recent_product
                   .paginate(page: params[:page], per_page: Settings.per_page)
   end
+
+
+  def show; end
 
   def new
     @product = Product.new
@@ -31,6 +34,13 @@ class Admin::ProductsController < AdminsController
     else
       render :edit
     end
+  end
+
+  def destroy
+    if @product.destroy
+      flash[:success] = t "products.text_product_deleted"
+    end
+    redirect_to admin_root_url
   end
 
   private
