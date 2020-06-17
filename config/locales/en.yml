@@ -33,7 +33,7 @@ en:
     text_menu_home: "Home"
     text_menu_category: "Category"
     text_menu_page: "Pages"
-    text_menu_contact: "Contact"
+    text_menu_contact: "Your cart"
     main_title: "Cheers"
     text_link_log_out: "Log out"
     text_link_log_in: "Login"
@@ -86,6 +86,37 @@ en:
     text_success_product: "Product added"
     text_select: "Select a category"
     text_error_category: "Category not found"
+    text_usd: "USD"
+    text_edit: "Edit"
+    text_delete: "Delete"
+    text_dau: "|"
+    text_showing: "Showing"
+    text_out_of: "Out of"
+    text_record: "Records"
+    text_cfm: "Are you sure?"
+    text_login_ples: "Please log in...."
+    text_product_deleted: "Product deleted"
+  edit_product:
+    text_title: "Edit"
+    text_button_save: "Save"
+    text_title_form: "Edit product"
+    text_updated: "Updated"
+    text_error_not_found: "User not found"
+  products_user:
+    text_btn_add: "Add to cart"
+  product_detail:
+    title_page: "Product Details"
+  carts:
+    error_not_found_item: "not found item"
+    text_cart_title: "Carts"
+    text_column_image: "Image"
+    text_column_name: "Name"
+    text_column_price: "Price"
+    text_column_quantity: "Quantity"
+    text_column_total: "Total"
+    text_column_edit: "Edit"
+    cart_increse: "+"
+    cart_sub: "-"
   activerecord:
     models:
       attributes:
@@ -114,4 +145,11 @@ en:
               bad_name: "Name can't be more than 50 character"
             image:
               bad_image: "Image should less than 5MB"
-
+  number:
+     currency:
+        format:
+          unit: "USD"
+          delimiter: ","
+          separator: "."
+          precision: 2
+          format: "%u%n"
