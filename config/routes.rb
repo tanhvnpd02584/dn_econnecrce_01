@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :purchases, only: %i(new create)
     namespace :admin do
       root "products#index"
+      resources :products, only: :import do
+        collection {post :import}
+      end
       resources :products, except: %i(show destroy)
       resources :purchases, only: :index
     end

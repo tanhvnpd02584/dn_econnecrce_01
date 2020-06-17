@@ -5,9 +5,9 @@
   <td><%= purchase.address %></td>
   <td><%= ld purchase.created_at %></td>
   <% if purchase.status != true %>
-    <td><span class="status text-danger">&bull;</span> Suspended</td>
+    <td><span class="status text-danger">&bull;</span><%= t "purchases.status_suspended" %></td>
   <% else %>
-    <td><span class="status text-success">&bull;</span> Active</td>
+    <td><span class="status text-success">&bull;</span><%= t "purchases.status_active" %></td>
   <% end %>
   <td>
     <% if purchase.status != true %>

@@ -10,9 +10,12 @@
         <%= link_to new_admin_product_path, class: "btn btn-primary" do %>
         <span><%= t "admin_products.text_button_add" %></span>
         <% end %>
-        <%= link_to "#", class: "btn btn-primary" do %>
-        <span><%= t "admin_products.text_button_export" %></span>
+        <div class="form-group">
+        <%= form_tag import_admin_products_path, multipart: true do %>
+          <%= file_field_tag :file, accept: Settings.excel %>
+          <%= submit_tag t("admin_products.text_button_import")%>
         <% end %>
+      </div>
       </div>
     </div>
   </div>

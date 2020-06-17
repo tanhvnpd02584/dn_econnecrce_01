@@ -1,12 +1,21 @@
 class Admin::ProductsController < AdminsController
   before_action :logged_in_user, except: %i(show index)
-  before_action :load_product, except: %i(create new index)
+  before_action :load_product, except: %i(create new index import)
   before_action :find_category, only: %i(create update)
 
   def index
     @products = Product.recent_product
                        .paginate(page: params[:page],
                                  per_page: Settings.per_page)
+  end
+
+  def import
+      Product.import_file params[:file]
+      flash[:success] = t "admin_products.text_imported"
+      redirect_to admin_root_url
+    rescue => e
+      flash[:danger] = t "admin_products.text_error_excel"
+      redirect_to admin_root_url
   end
 
   def show; end

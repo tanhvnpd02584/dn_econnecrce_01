@@ -28,4 +28,20 @@ class Product < ApplicationRecord
   end
 
   delegate :name, to: :category, prefix: :category
+
+  def self.import_file file
+    # get file to open
+    spreadsheet = Roo::Spreadsheet.open file
+    products = []
+
+    # retrive column (column name)
+    header = spreadsheet.row 1
+
+    # each from row 2 to last
+    (2..spreadsheet.last_row).each do |i|
+      # add each array of row to products,
+      products << spreadsheet.row(i)
+    end
+    import! header, products
+  end
 end
