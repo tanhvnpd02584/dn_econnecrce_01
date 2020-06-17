@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :logged_in_user, only: %i(create new)
   before_action :cart_is_empty?, only: :create
+  after_action :mail_reset_session, only: :create
 
   def new
     @purchase = Purchase.new
@@ -11,7 +12,6 @@ class PurchasesController < ApplicationController
       @purchase = current_user.purchases.build(purchase_params)
       @purchase.save!
       add_products_to_detailspurchase @purchase.id
-      session[:cart] = {}
       flash[:success] = t "checkout.add_success"
       redirect_to root_url
     rescue ActiveRecord::RecordInvalid
@@ -23,6 +23,12 @@ class PurchasesController < ApplicationController
   end
 
   private
+
+  # send mail and reset session
+  def mail_reset_session
+    @purchase.send_mail_to_customer current_user.email, session[:cart]
+    session[:cart] = {}
+  end
 
   # insert details purchase in to details purchase
   def add_products_to_detailspurchase purchase_id

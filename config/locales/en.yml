@@ -141,7 +141,7 @@ en:
     error_cart_empty: "Your cart is empty please shopping more"
     add_success: "Purchase is created"
     btn_preceed: "Proceed to Paypal"
-    errors_save: "Oops! can't not create purchaes sorry"
+    errors_save: "Oops! can't not create purchaes sorry: %{err}"
   purchases:
     title: "Purchases"
     title_page: "Purchases Management"
@@ -155,6 +155,15 @@ en:
     column_un: "Click to unActive"
     status_suspended: "Suspended"
     status_active: "Actived"
+  mail_order:
+    title_mail: "Buy product from Cheers"
+    mail_hi: "Hi"
+    mail_thanks: "Thanks for your beliving with our store ! love you"
+    your_order: "Your order is:"
+    products: "Product name: %{name}"
+    quantity: "Quantity: %{quantity}"
+    unit_price: "Unit_price: %{price}"
+    total: "Total: %{total}"
   activerecord:
     models:
       attributes:

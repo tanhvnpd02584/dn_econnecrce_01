@@ -10,12 +10,12 @@ class Admin::ProductsController < AdminsController
   end
 
   def import
-      Product.import_file params[:file]
-      flash[:success] = t "admin_products.text_imported"
-      redirect_to admin_root_url
-    rescue => e
-      flash[:danger] = t "admin_products.text_error_excel"
-      redirect_to admin_root_url
+    Product.import_file params[:file]
+    flash[:success] = t "admin_products.text_imported"
+    redirect_to admin_root_url
+  rescue => e
+    flash[:danger] = t "admin_products.text_error_excel"
+    redirect_to admin_root_url
   end
 
   def show; end
