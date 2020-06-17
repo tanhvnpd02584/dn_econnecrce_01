@@ -67,6 +67,8 @@ en:
     text_category_Quimes: "Beer Quimes"
     text_category_Guinness: "Guinness"
     text_category_Birra Moretti: "Birra Moretti"
+    text_not_found: "Not found category"
+
   home_page:
     title_home: "Ecomerce web application"
     title_page: "Hot Beer 2020"
@@ -104,6 +106,7 @@ en:
     text_login_ples: "Please log in...."
     text_product_deleted: "Product deleted"
     text_error_not_found: "Prodcucts not found"
+    text_btn_search: "Search"
   edit_product:
     text_title: "Edit"
     text_button_save: "Save"
@@ -153,8 +156,11 @@ en:
     column_status: "Status"
     column_edit: "Click to active"
     column_un: "Click to unActive"
-    status_suspended: "Suspended"
+    status_suspended: "Unactive"
     status_active: "Actived"
+    status_updated: "Purchase is updated"
+    status_updated_unactive: "Purchase is unactived"
+    status_cant_update: "Oops! can not update now"
   mail_order:
     title_mail: "Buy product from Cheers"
     mail_hi: "Hi"

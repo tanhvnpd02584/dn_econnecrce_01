@@ -2,6 +2,7 @@ class PurchasesController < ApplicationController
   before_action :logged_in_user, only: %i(create new)
   before_action :cart_is_empty?, only: :create
   after_action :mail_reset_session, only: :create
+  before_action :find_purchase, only: :update
 
   def new
     @purchase = Purchase.new

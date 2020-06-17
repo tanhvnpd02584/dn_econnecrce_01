@@ -2,9 +2,10 @@ class ProductsController < ApplicationController
   before_action :find_product, only: :show
 
   def index
-    @products = Product.sorted
+    @products = Product.search(params[:term])
                        .paginate(page: params[:page],
                                  per_page: Settings.per_page_user)
+    @categories = Category.sorted
   end
 
   def show; end
