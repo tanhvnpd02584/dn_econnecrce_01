@@ -1,0 +1,17 @@
+
+<%= form_for @purchase, class: "row contact_form" do |f| %>
+  <%= render "admin/shared/error_messages", object: f.object%>
+  <div class="col-md-12 form-group">
+    <%= f.text_field :name, id: :name, class: "form-control", placeholder: true %>
+  </div>
+  <div class="col-md-6 form-group p_star">
+    <%= f.text_field :phone_number, id: :phone_number, class: "form-control", placeholder: true %>
+  </div>
+  <div class="col-md-12 form-group">
+    <h3><%= t "checkout.shipping" %></h3>
+    <%= f.text_field :address, id: :Address, class: "form-control", placeholder: true %>
+  </div>
+  <div class="col-md-12 form-group">
+    <%= f.submit t("checkout.btn_preceed"), class: "main_btn"%>
+  </div>
+<% end %>

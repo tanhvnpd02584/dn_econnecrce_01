@@ -44,9 +44,25 @@
                 </td>
               </tr>
               <% end %>
-            </tbody>
-          </table>
-        </div>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>
+                  <h3><%= t "carts.text_subtotal" %></h3>
+                </td>
+                <td>
+                  <h3><%= number_to_currency(sub_total) %></h3>
+                </td>
+                <td>
+                  <div class="cupon_text">
+                    <%=  link_to t("carts.text_checkout"), new_purchase_path, class: "main_btn" %>
+                  </div>
+                </td>
+              </tr>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </section>
+  </div>
+</section>

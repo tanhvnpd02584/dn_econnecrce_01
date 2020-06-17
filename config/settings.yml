@@ -4,6 +4,8 @@ password_from: 6
 password_to: 12
 phone_number_maximum: 11
 phone_number_minimum: 10
+address_maximum: 255
+address_minimum: 20
 per_page_products: 9
 price_greater: 0
 price_less: 1000000
