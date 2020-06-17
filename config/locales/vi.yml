@@ -2,11 +2,11 @@ vi:
   layout_header:
     text_phone: "Phone: +01 256 25 235"
     text_email: "Eamil: omgod234@sun-asterisk"
-    text_gift: "Gift card"
-    text_order: "Oder"
+    text_gift: "Order"
+    text_order: "Cart"
     text_contact: "Contact"
     text_menu_home: "Home"
-    text_menu_blog: "Blog"
+    text_menu_blog: "Category"
     text_menu_page: "Pages"
     text_menu_contact: "Contact"
     main_title: "Cheers"
@@ -43,3 +43,13 @@ vi:
     text_price: "$120.70"
     text_product: "BudWeirser"
     text_title: "Home"
+
+  model:
+    error_email: "email can't be more than 255 character"
+    error_name: "Name can't be more than 50 character"
+    error_email_pattern: "Email is in valid, should be abc@gmail.com"
+    error_phone_number: "Phone number has >=10 and <= 11 character"
+    error_phone_pattern: "phone should be 0941789420"
+  application:
+    text_english: "English"
+    text_vietnamese: "Vietnamese"

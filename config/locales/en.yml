@@ -1,15 +1,30 @@
 en:
+  admin:
+    title_login: "login"
+    title: "Admin Beers"
+    text_page: "Login"
+    text_menu_user: "User manager"
+    text_menu_product: "Products manager"
+    text_menu_order: "Order manager"
+    text_menu_request: "Request manager"
+    text_button_log_out: "Logout"
+    text_welcom_admin: "Welcom Admin"
+  login:
+    text_login_failed: "Login failed invalid username or password"
+    text_login_not_found: "User not found"
   layout_header:
     text_phone: "Phone: +01 256 25 235"
     text_email: "Eamil: omgod234@sun-asterisk"
-    text_gift: "Gift card"
-    text_order: "Oder"
+    text_gift: "Order"
+    text_order: "Cart"
     text_contact: "Contact"
     text_menu_home: "Home"
-    text_menu_blog: "Blog"
+    text_menu_category: "Category"
     text_menu_page: "Pages"
     text_menu_contact: "Contact"
     main_title: "Cheers"
+    text_link_log_out: "Log out"
+    text_link_log_in: "Login"
   layout_footer:
     text_top_product: "Top Products"
     text_quick_links: "Quick Links"
@@ -43,3 +58,21 @@ en:
     text_price: "$120.70"
     text_product: "BudWeirser"
     text_title: "Home"
+  application:
+    text_english: "English"
+    text_vietnamese: "Vietnamese"
+  products:
+    title_page: "Products"
+    product_price: "USD"
+  activerecord:
+    errors:
+      models:
+        user: # or namespace/model_name
+          attributes:
+            email:
+              bad_email: "email can't be more than 255 character, should be omgod234@gmail.com"
+            name:
+              bad_name: "Name can't be more than 50 character"
+            phone_number:
+              bad_phone_number: "Phone number has >=10 and <= 11 character, should be 0941789420"
+
