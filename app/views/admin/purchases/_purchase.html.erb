@@ -1,0 +1,19 @@
+<tr>
+  <td><%= purchase.id %></td>
+  <td><%= purchase.name %></td>
+  <td><%= purchase.phone_number %></td>
+  <td><%= purchase.address %></td>
+  <td><%= ld purchase.created_at %></td>
+  <% if purchase.status != true %>
+    <td><span class="status text-danger">&bull;</span> Suspended</td>
+  <% else %>
+    <td><span class="status text-success">&bull;</span> Active</td>
+  <% end %>
+  <td>
+    <% if purchase.status != true %>
+      <%= link_to t("purchases.column_edit"), "#", class: "settings" %>
+    <% else %>
+      <%= link_to t("purchases.column_un"), "#", class: "settings" %>
+    <% end %>
+  </td>
+</tr>

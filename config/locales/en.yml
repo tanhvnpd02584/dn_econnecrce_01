@@ -1,4 +1,7 @@
 en:
+  dates:
+    formats:
+      date_month_year_concise: '%d-%m-%y'
   admin:
     title_login: "login"
     title: "Admin Beers"
@@ -134,6 +137,17 @@ en:
     add_success: "Purchase is created"
     btn_preceed: "Proceed to Paypal"
     errors_save: "Oops! can't not create purchaes sorry"
+  purchases:
+    title: "Purchases"
+    title_page: "Purchases Management"
+    column_dau: "#"
+    column_name: "Name"
+    column_phone_number: "Phone number"
+    column_address: "Address"
+    column_create_at: "Created at"
+    column_status: "Status"
+    column_edit: "Click to active"
+    column_un: "Click to unActive"
   activerecord:
     models:
       attributes:
@@ -179,7 +193,6 @@ en:
           separator: "."
           precision: 2
           format: "%u%n"
-  en:
   helpers:
     placeholder:
       purchase:

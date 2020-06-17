@@ -5,6 +5,8 @@ class Purchase < ApplicationRecord
   # 1 puchase belongs to 1 user
   belongs_to :user
 
+  scope :sorted, ->{order :id}
+
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/.freeze
 
   validates :name, length: {maximum: Settings.name_maximum,
@@ -19,4 +21,13 @@ class Purchase < ApplicationRecord
   validates :address, length: {maximum: Settings.address_maximum,
                                message: :bad_address},
    presence: true
+
+  def self.to_xls options = {}
+    CSV.generate(options) do |csv|
+      csv << column_names
+      sorted.each do |purchase|
+        csv << purchase.attributes.values_at(*column_names)
+      end
+    end
+  end
 end
