@@ -23,6 +23,7 @@ vi:
   login:
     text_login_failed: "Login failed invalid username or password"
     text_login_not_found: "User not found"
+    text_login_pls: "Please log in ..."
   layout_header:
     text_phone: "Phone: +01 256 25 235"
     text_email: "Eamil: omgod234@sun-asterisk"
@@ -84,6 +85,19 @@ vi:
     text_button_add: "Add"
     text_success_product: "Product added"
     text_select: "Select a category"
+    text_usd: "USD"
+    text_edit: "Edit"
+    text_delete: "Delete"
+    text_dau: "|"
+    text_showing: "Showing"
+    text_out_of: "Out of"
+    text_record: "Records"
+  edit_product:
+    text_title: "Edit"
+    text_button_save: "Save"
+    text_title_form: "Edit product"
+    text_updated: "Updated"
+    text_error_not_found: "User not found"
   activerecord:
     models:
       attributes:
