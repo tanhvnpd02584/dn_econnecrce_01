@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t "home_page.title_home" %></title>
+  <title> <%= full_title yield :title %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
@@ -9,6 +9,13 @@
 </head>
 
 <body>
-  <%= yield %>
+  <%= render "shared/header" %>
+  <%= render "shared/banner" %>
+  <section class="new_product_area section_gap_top section_gap_bottom_custom">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </section>
+  <%= render "shared/footer" %>
 </body>
 </html>
