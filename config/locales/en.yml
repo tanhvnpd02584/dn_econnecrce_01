@@ -86,6 +86,22 @@ en:
     text_success_product: "Product added"
     text_select: "Select a category"
     text_error_category: "Category not found"
+    text_usd: "USD"
+    text_edit: "Edit"
+    text_delete: "Delete"
+    text_dau: "|"
+    text_showing: "Showing"
+    text_out_of: "Out of"
+    text_record: "Records"
+    text_cfm: "Are you sure?"
+    text_login_ples: "Please log in...."
+    text_product_deleted: "Product deleted"
+  edit_product:
+    text_title: "Edit"
+    text_button_save: "Save"
+    text_title_form: "Edit product"
+    text_updated: "Updated"
+    text_error_not_found: "User not found"
   activerecord:
     models:
       attributes:
@@ -114,4 +130,11 @@ en:
               bad_name: "Name can't be more than 50 character"
             image:
               bad_image: "Image should less than 5MB"
-
+  number:
+     currency:
+        format:
+          unit: "USD"
+          delimiter: ","
+          separator: "."
+          precision: 2
+          format: "%u%n"

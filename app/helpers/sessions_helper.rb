@@ -4,6 +4,11 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
+  # return true if current user = true and current user == true
+  def current_user? user
+    user && user == current_user
+  end
+
   def current_user
     @current_user ||= User.find_by id: session[:user_id]
   end
