@@ -1,0 +1,8 @@
+<% if @products.any? %>
+  <div class="latest_product_inner">
+    <div class="row">
+      <%=  render @products %>
+      <%= will_paginate @products %>
+    </div>
+  </div>
+<% end %>
