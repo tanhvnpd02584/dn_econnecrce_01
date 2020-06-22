@@ -13,6 +13,12 @@
   <%= render "shared/banner" %>
   <section class="new_product_area section_gap_top section_gap_bottom_custom">
     <div class="container">
+      <p><%= link_to t("application.text_english"), locale: :en %>
+        <%= link_to t("application.text_vietnamese"), locale: :vi %>
+        <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+      </p>
       <%= yield %>
     </div>
   </section>

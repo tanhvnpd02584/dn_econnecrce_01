@@ -1,0 +1,7 @@
+name_maximum: 50
+email_maximum: 255
+password_from: 6
+password_to: 12
+phone_number_maximum: 11
+phone_number_minimum: 10
+per_page_products: 9

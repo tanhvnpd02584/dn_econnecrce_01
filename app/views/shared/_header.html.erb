@@ -11,39 +11,41 @@
         <div class="col-lg-5">
           <div class="float-right">
             <ul class="right_side">
-             <li><%= link_to t("layout_header.text_gift"), "#" %></li>
-             <li><%= link_to t("layout_header.text_order"), "#" %></li>
-             <li><%= link_to t("layout_header.text_contact"), "#" %></li>
-           </ul>
-         </div>
-       </div>
-     </div>
-   </div>
-   <div class="main_menu">
-    <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light w-100">
-        <a class="navbar-brand " href="index.html">
+              <% if logged_in? %>
+              <% byebug %>
+              <li><%= link_to current_user.name, "#" %></li>
+              <li><%= link_to t("layout_header.text_link_log_out"), logout_path, method: :delete %></li>
+              <% else %>
+              <li><%= link_to t("layout_header.text_link_log_in"), login_path %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_menu">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+          <%= link_to root_path, class: "navbar-brand" do %>
           <h2 class="main_title">
             <%= t "layout_header.main_title" %>
           </h2>
-        </a>
-        <div class="collapse navbar-collapse offset w-100" id="navbarSupportedContent">
-          <div class="row w-100 mr-0">
-            <div class="col-lg-7 pr-0">
-              <ul class="nav navbar-nav center_nav pull-right">
-                <li class="nav-item active">
-                  <%= link_to t("layout_header.text_menu_home"), "#", class: "nav-link" %>
+          <% end %>
+          <div class="collapse navbar-collapse offset w-100" id="navbarSupportedContent">
+            <div class="row w-100 mr-0">
+              <div class="col-lg-7 pr-0">
+                <ul class="nav navbar-nav center_nav pull-right">
+                  <li class="nav-item active">
+                    <%= link_to t("layout_header.text_menu_home"), root_path, class: "nav-link" %>
+                  </li>
+                  <li class="nav-item">
+                   <%= link_to t("layout_header.text_menu_category"), "#", class: "nav-link" %>
+                 </li>
+                 <li class="nav-item">
+                  <%= link_to t("layout_header.text_menu_contact"), "#", class: "nav-link" %>
                 </li>
-                <li class="nav-item">
-                 <%= link_to t("layout_header.text_menu_blog"), "#", class: "nav-link" %>
-               </li>
-               <li class="nav-item">
-                 <%= link_to t("layout_header.text_menu_page"), "#", class: "nav-link" %>
-               </li>
-               <li class="nav-item">
-                <%= link_to t("layout_header.text_menu_contact"), "#", class: "nav-link" %>
-              </li>
-            </ul>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
