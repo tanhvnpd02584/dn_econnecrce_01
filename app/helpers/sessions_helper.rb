@@ -18,4 +18,13 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  # redirect to login if user not logged in
+  def logged_in_user
+    unless logged_in?
+
+      flash[:danger] = t "login.text_login_pls"
+      redirect_to login_url
+    end
+  end
 end
