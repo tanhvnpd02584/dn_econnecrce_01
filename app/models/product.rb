@@ -12,6 +12,7 @@ class Product < ApplicationRecord
   has_one_attached :image
 
   scope :recent_product, ->{order created_at: :desc}
+  scope :sorted, ->{order :name}
 
   validates :name, length: {maximum: Settings.name_maximum, message: :bad_name},
    presence: true
@@ -26,5 +27,5 @@ class Product < ApplicationRecord
       .variant resize_to_limit: [Settings.image_display, Settings.image_display]
   end
 
-   delegate :name, to: :category, prefix: :category
+  delegate :name, to: :category, prefix: :category
 end

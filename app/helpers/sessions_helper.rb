@@ -32,4 +32,18 @@ module SessionsHelper
       redirect_to login_url
     end
   end
+
+  # tinh total tien
+  def total(quantity, unit_price)
+    @total = quantity * unit_price
+  end
+
+  # duyet session to retrive id and quantity
+  def find_product id
+    @product = Product.find_by(id)
+    return if @product
+
+    flash[:danger] = t "products.text_error_not_found"
+    redirect_to root_url
+  end
 end
