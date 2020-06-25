@@ -117,6 +117,7 @@ en:
     text_column_edit: "Edit"
     cart_increse: "+"
     cart_sub: "-"
+    text_delete: "Delete"
   activerecord:
     models:
       attributes:
