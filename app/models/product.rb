@@ -11,6 +11,8 @@ class Product < ApplicationRecord
   # active record 1 product 1 image
   has_one_attached :image
 
+  scope :recent_product, ->{order created_at: :desc}
+
   validates :name, length: {maximum: Settings.name_maximum, message: :bad_name},
    presence: true
   validates :unit_price, numericality: {greater_than: Settings.price_greater,
@@ -18,4 +20,11 @@ class Product < ApplicationRecord
   validates :quantity, numericality: {greater_than: Settings.price_greater,
                                       less_than: Settings.price_less}
   validates :image, content_type: {in: Settings.file_valid, message: :bad_image}
+
+  def display_image
+    image
+      .variant resize_to_limit: [Settings.image_display, Settings.image_display]
+  end
+
+   delegate :name, to: :category, prefix: :category
 end
