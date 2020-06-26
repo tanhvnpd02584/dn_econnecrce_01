@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :products, only: %i(show index)
     post "carts/:id/add", to: "carts#add_item", as: "cart_add_item"
+    delete "carts/:id/delte", to: "carts#remove_from_cart", as: "remove_from_cart"
     get "carts", to: "carts#index", as: "carts"
     namespace :admin do
       root "products#index"
