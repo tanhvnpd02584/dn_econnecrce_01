@@ -1,0 +1,44 @@
+<% provide(:title, t("checkout.title_page")) %>
+<section class="checkout_area section_gap">
+  <div class="container">
+    <div class="returning_customer">
+      <div class="check_title">
+        <h2>
+          <%= t "checkout.title" %>
+        </h2>
+      </div>
+    </div>
+    <div class="billing_details">
+      <div class="row">
+        <div class="col-lg-8">
+          <%= render "form" %>
+        </div>
+        <div class="col-lg-4">
+          <div class="order_box">
+            <h2><%= t "checkout.title_order" %></h2>
+            <ul class="list">
+              <li>
+                <h4><%=  t "checkout.title_product" %></h4>
+              </li>
+              <% session[:cart].each do |id, quantity| %>
+              <% find_product id %>
+              <li>
+                <p><%= @product.name %>
+                  <span class="middle"><%= quantity %></span>
+                  <span class="last"><%= number_to_currency(total(quantity, @product.unit_price))%></span>
+                </p>
+              </li>
+              <% end %>
+              <li>
+                <p><%= t "checkout.text_your_total" %>
+                  <span class="middle"></span>
+                  <span class="last"><%= number_to_currency(sub_total) %></span>
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

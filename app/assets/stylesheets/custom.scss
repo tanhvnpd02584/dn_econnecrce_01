@@ -941,6 +941,220 @@ img {
   white-space: nowrap
 }
 
+
+.s_product_text .list li a.active {
+  color: #71cd14
+}
+
+.s_product_text .list li a.active span {
+  color: #555
+}
+
+.s_product_text .list li:last-child {
+  margin-bottom: 0px
+}
+
+.s_product_text p {
+  padding-top: 20px;
+  border-top: 1px dotted #d5d5d5;
+  margin-top: 20px;
+  margin-bottom: 70px
+}
+
+.s_product_text .card_area .main_btn {
+  line-height: 38px;
+  padding: 0px 38px;
+  text-transform: uppercase;
+  margin-right: 10px
+}
+
+.s_product_text .card_area .icon_btn {
+  margin-right: 10px;
+  background: #f6f6f6;
+  border-radius: 3px;
+  color: #2a2a2a;
+  display: inline-block;
+  line-height: 40px;
+  text-align: center;
+  padding: 0px 13px;
+  font-size: 14px
+}
+
+.s_product_text .card_area .icon_btn:hover {
+  background: #fff;
+  box-shadow: -14.142px 14.142px 20px 0px rgba(0, 0, 0, 0.1)
+}
+
+.product_count {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 24px
+}
+
+.product_count label {
+  font-size: 14px;
+  color: #797979;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  padding-right: 10px
+}
+
+.product_count input {
+  width: 76px;
+  border: 1px solid #eeeeee;
+  border-radius: 3px;
+  padding-left: 10px
+}
+
+.product_count button {
+  display: block;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  font-size: 14px;
+  color: #cccccc;
+  transition: all 300ms linear 0s
+}
+
+.product_count button:hover {
+  color: #2a2a2a
+}
+
+.product_count .increase {
+  top: -4px
+}
+
+.product_count .reduced {
+  bottom: -1px
+}
+
+.product_description_area {
+  padding-bottom: 120px;
+  margin-top: 60px
+}
+
+.product_description_area .nav.nav-tabs {
+  background: #f6f6f6;
+  text-align: center;
+  display: block;
+  border: none;
+  padding: 10px 0px
+}
+
+.product_description_area .nav.nav-tabs li {
+  display: inline-block;
+  margin-right: 7px
+}
+
+.product_description_area .nav.nav-tabs li:last-child {
+  margin-right: 0px
+}
+
+.product_description_area .nav.nav-tabs li a {
+  padding: 0px;
+  border: none;
+  line-height: 38px;
+  background: #fff;
+  border: 1px solid #eeeeee;
+  border-radius: 0px;
+  padding: 0px 30px;
+  color: #2a2a2a;
+  font-size: 13px;
+  font-weight: normal
+}
+
+.product_description_area .nav.nav-tabs li a.active {
+  background: #71cd14;
+  color: #fff;
+  border-color: #71cd14
+}
+
+.product_description_area .tab-content {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 30px
+}
+
+.product_description_area .tab-content p {
+  color: #797979
+}
+
+.product_description_area .tab-content .total_rate .box_total {
+  background: #f6f6f6;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+.product_description_area .tab-content .total_rate .box_total h4 {
+  color: #71cd14;
+  font-size: 48px;
+  font-weight: bold
+}
+
+.product_description_area .tab-content .total_rate .box_total h5 {
+  color: #2a2a2a;
+  margin-bottom: 0px;
+  font-size: 24px
+}
+
+.product_description_area .tab-content .total_rate .box_total h6 {
+  color: #2a2a2a;
+  margin-bottom: 0px;
+  font-size: 14px;
+  color: #797979;
+  font-weight: normal
+}
+
+.product_description_area .tab-content .total_rate .rating_list {
+  margin-bottom: 30px
+}
+
+.product_description_area .tab-content .total_rate .rating_list h3 {
+  font-size: 18px;
+  color: #2a2a2a;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin-bottom: 10px
+}
+
+.product_description_area .tab-content .total_rate .rating_list .list li a {
+  font-size: 14px;
+  color: #797979
+}
+
+.product_description_area .tab-content .total_rate .rating_list .list li a i {
+  color: #fbd600
+}
+
+.product_description_area .tab-content .total_rate .rating_list .list li:nth-child a i:last-child {
+  color: #eeeeee
+}
+
+.product_description_area .tab-content .table {
+  margin-bottom: 0px
+}
+
+.product_description_area .tab-content .table tbody tr td {
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-top: 14px;
+  padding-bottom: 14px
+}
+
+.product_description_area .tab-content .table tbody tr td h5 {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #797979;
+  margin-bottom: 0px;
+  white-space: nowrap
+}
+
 .product_description_area .tab-content .table tbody tr:first-child td {
   border-top: 0px
 }
@@ -1218,3 +1432,110 @@ img {
   text-transform: uppercase
 }
 
+/*Detail box*/
+.order_box {
+  background: #f9f9f9;
+  padding: 30px
+}
+.order_box h2 {
+  border-bottom: 1px solid #dddddd;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2a2a2a;
+  padding-bottom: 15px
+}
+.order_box .list li p {
+  font-size: 14px;
+  color: #797979;
+  font-weight: normal;
+  border-bottom: 1px solid #eeeeee;
+  display: block;
+  line-height: 42px
+}
+.order_box .list li p span {
+  float: right
+}
+.order_box .list li p .middle {
+  float: none;
+  width: 50px;
+  text-align: right;
+  display: inline-block;
+  margin-left: 30px;
+  color: #2a2a2a
+}
+.order_box .list li:nth-child(4) a .middle {
+  margin-left: 48px
+}
+.order_box .list_2 li p {
+  text-transform: uppercase;
+  color: #2a2a2a;
+  font-weight: 500
+}
+.order_box .list_2 li p span {
+  color: #797979;
+  text-transform: capitalize
+}
+.order_box .list_2 li:last-child p span {
+  color: #2a2a2a
+}
+.order_box .payment_item h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  font-weight: 500;
+  padding-left: 22px;
+  position: relative;
+  margin-bottom: 15px;
+  margin-top: 15px
+}
+.order_box .payment_item h4:before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #cdcdcd;
+  background: #fff;
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.order_box .payment_item h4:after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  background: #fff;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 8px
+}
+.order_box .payment_item h4 img {
+  padding-left: 60px
+}
+.order_box .payment_item p {
+  background: #fff;
+  padding: 20px
+}
+.order_box .payment_item.active h4:before {
+  background: #71cd14;
+  border-color: #71cd14
+}
+.order_box .creat_account {
+  margin-bottom: 15px
+}
+.order_box .creat_account label {
+  padding-left: 10px;
+  font-size: 12px;
+  color: #2a2a2a
+}
+.order_box .creat_account a {
+  color: #71cd14
+}
+.order_box .main_btn {
+  display: block;
+  line-height: 38px;
+  text-transform: uppercase
+}

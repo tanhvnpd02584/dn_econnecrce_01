@@ -118,6 +118,22 @@ en:
     cart_increse: "+"
     cart_sub: "-"
     text_delete: "Delete"
+    text_subtotal: "Subtotal"
+    text_checkout: "Checkout"
+  checkout:
+    title: "Billing details"
+    place_holder: "Your name"
+    shipping: "Shipping details"
+    phone_number: "Phone Number"
+    title_order: "Your Order"
+    title_product: "Product"
+    title_total: "Total"
+    title_page: "Check out"
+    text_your_total: "Your total"
+    error_cart_empty: "Your cart is empty please shopping more"
+    add_success: "Purchase is created"
+    btn_preceed: "Proceed to Paypal"
+    errors_save: "Oops! can't not create purchaes sorry"
   activerecord:
     models:
       attributes:
@@ -146,6 +162,15 @@ en:
               bad_name: "Name can't be more than 50 character"
             image:
               bad_image: "Image should less than 5MB"
+
+        purchase:
+          attributes:
+            name:
+              bad_name: "Name can't be more than 50 character"
+            phone_number:
+              bad_phone_number: "Phone number has >=10 and <= 11 character, should be 0941789420"
+            address:
+              bad_address: "Address must details, shoud be 08 ha van tinh, lien chieu, da nang"
   number:
      currency:
         format:
@@ -154,3 +179,10 @@ en:
           separator: "."
           precision: 2
           format: "%u%n"
+  en:
+  helpers:
+    placeholder:
+      purchase:
+        name: "Enter your name"
+        phone_number: "Enter your phone number"
+        address: "Note your address here"
