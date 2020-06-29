@@ -22,6 +22,10 @@ class Purchase < ApplicationRecord
                                message: :bad_address},
    presence: true
 
+  def send_mail_to_customer email, session
+    OrderMailer.send_order(self, email, session).deliver_now
+  end
+
   def self.to_xls options = {}
     CSV.generate(options) do |csv|
       csv << column_names

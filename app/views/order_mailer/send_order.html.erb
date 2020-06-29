@@ -1,0 +1,24 @@
+<h1><%= t "mail_order.mail_hi" %> <%= @purchase.name%></h1>
+<p>
+  <%= t "mail_order.mail_thanks" %>
+</p>
+<p>
+  <%= t "mail_order.your_order"%>
+</p>
+<%  sum = 0 %>
+<% @session.each do |id, quantity| %>
+<%= find_product id %>
+  <p>
+  <%= t "mail_order.products", name: @product.name %>
+  </p>
+  <p>
+  <%= t "mail_order.unit_price", price: number_to_currency(@product.unit_price) %>
+  </p>
+  <p>
+  <%= t "mail_order.quantity", quantity: quantity %>
+  </p>
+  <% sum += total(quantity, @product.unit_price) %>
+<% end %>
+  <p>
+  <%= t "mail_order.total", total: number_to_currency(sum)%>
+  </p>
