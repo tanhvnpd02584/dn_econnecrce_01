@@ -12,10 +12,12 @@ en:
     text_menu_request: "Request manager"
     text_button_log_out: "Logout"
     text_welcom_admin: "Welcom Admin"
+  admin_purchases:
+    text_export: "Export excel"
   admin_products:
     title_table: "Product Management"
     text_button_add: "Add new product"
-    text_button_export: "Export to excel"
+    text_button_import: "Import from excel"
     text_dau: "#"
     text_name: "Name"
     text_category: "Category"
@@ -23,6 +25,8 @@ en:
     text_quantity: "Quantity"
     text_descriptiom: "Description"
     text_edit: "Edit"
+    text_imported: "Data Imported"
+    text_error_excel: "Can't not import"
   login:
     text_login_failed: "Login failed invalid username or password"
     text_login_not_found: "User not found"
@@ -99,6 +103,7 @@ en:
     text_cfm: "Are you sure?"
     text_login_ples: "Please log in...."
     text_product_deleted: "Product deleted"
+    text_error_not_found: "Prodcucts not found"
   edit_product:
     text_title: "Edit"
     text_button_save: "Save"
@@ -148,6 +153,8 @@ en:
     column_status: "Status"
     column_edit: "Click to active"
     column_un: "Click to unActive"
+    status_suspended: "Suspended"
+    status_active: "Actived"
   activerecord:
     models:
       attributes:

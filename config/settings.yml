@@ -10,8 +10,10 @@ per_page_products: 9
 price_greater: 0
 price_less: 1000000
 file_accept: "image/jpeg,image/gif,image/png"
+file_accept_excel: "file/xlsx"
 file_valid: ["image/jpeg", "image/gif", "image/png"]
 per_page: 12
 per_page_user: 9
 image_display: 200
 format_xls: "xls"
+excel: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
