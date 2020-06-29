@@ -1,0 +1,41 @@
+<% provide(:title, t("purchases.title")) %>
+<div class="table-wrapper">
+  <div class="table-title">
+    <div class="row">
+      <div class="col-sm-5">
+        <h2> <b><%= t "purchases.title_page" %></b></h2>
+      </div>
+      <div class="col-sm-7">
+        <%= link_to admin_purchases_path(format: Settings.format_xls), class: "btn btn-primary" do %>
+        <span><%= t "admin_products.text_button_export" %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th><%= t "purchases.column_dau" %></th>
+        <th><%= t "purchases.column_name" %></th>
+        <th><%= t "purchases.column_phone_number" %></th>
+        <th><%= t "purchases.column_address" %></th>
+        <th><%= t "purchases.column_create_at" %></th>
+        <th><%= t "purchases.column_status" %></th>
+        <th><%= t "purchases.column_edit" %></th>
+      </tr>
+    </thead>
+      <% if @purchases.any? %>
+        <%= render @purchases%>
+      <% end %>
+    </thead>
+  </table>
+  <div class="clearfix">
+    <div class="hint-text">
+      <%= t "products.text_showing" %>
+      <b><%= Settings.per_page %></b>
+      <%= t "products.text_out_of" %>
+      <b><%= @purchases.size %></b>
+      <%= t "products.text_record" %>
+  </div>
+  <%= will_paginate @products, class: "page-item" %>
+</div>

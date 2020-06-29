@@ -40,7 +40,7 @@
       <%= t "products.text_showing" %>
       <b><%= Settings.per_page %></b>
       <%= t "products.text_out_of" %>
-      <b><%= @products.count %></b>
+      <b><%= @products.size %></b>
       <%= t "products.text_record" %>
     </div>
     <%= will_paginate @products, class: "page-item" %>
