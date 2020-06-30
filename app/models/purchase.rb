@@ -26,11 +26,17 @@ class Purchase < ApplicationRecord
     OrderMailer.send_order(self, email, session).deliver_now
   end
 
-  def self.to_xls options = {}
-    CSV.generate(options) do |csv|
-      csv << column_names
-      sorted.each do |purchase|
-        csv << purchase.attributes.values_at(*column_names)
+  class << self
+    def group_purchase
+      group("DATE(created_at)").count
+    end
+
+    def to_xls options = {}
+      CSV.generate(options) do |csv|
+        csv << column_names
+        sorted.each do |purchase|
+          csv << purchase.attributes.values_at(*column_names)
+        end
       end
     end
   end
