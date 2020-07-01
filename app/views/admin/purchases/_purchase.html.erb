@@ -11,9 +11,9 @@
   <% end %>
   <td>
     <% if purchase.status != true %>
-      <%= link_to t("purchases.column_edit"), "#", class: "settings" %>
+      <%= link_to t("purchases.column_edit"), admin_purchase_path(purchase.id), method: :patch, class: "settings" %>
     <% else %>
-      <%= link_to t("purchases.column_un"), "#", class: "settings" %>
+      <%= link_to t("purchases.column_un"), admin_purchase_path(purchase.id), method: :patch, class: "settings" %>
     <% end %>
   </td>
 </tr>

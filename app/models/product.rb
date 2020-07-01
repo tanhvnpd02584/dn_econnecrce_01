@@ -13,6 +13,7 @@ class Product < ApplicationRecord
 
   scope :recent_product, ->{order created_at: :desc}
   scope :sorted, ->{order :name}
+  scope :search, ->(name){where("name LIKE ?", "%#{name}%") if name.present?}
 
   validates :name, length: {maximum: Settings.name_maximum, message: :bad_name},
    presence: true
@@ -29,19 +30,21 @@ class Product < ApplicationRecord
 
   delegate :name, to: :category, prefix: :category
 
-  def self.import_file file
-    # get file to open
-    spreadsheet = Roo::Spreadsheet.open file
-    products = []
+  class << self
+    def import_file file
+      # get file to open
+      spreadsheet = Roo::Spreadsheet.open file
+      products = []
 
-    # retrive column (column name)
-    header = spreadsheet.row 1
+      # retrive column (column name)
+      header = spreadsheet.row 1
 
-    # each from row 2 to last
-    (2..spreadsheet.last_row).each do |i|
-      # add each array of row to products,
-      products << spreadsheet.row(i)
+      # each from row 2 to last
+      (2..spreadsheet.last_row).each do |i|
+        # add each array of row to products,
+        products << spreadsheet.row(i)
+      end
+      import! header, products
     end
-    import! header, products
   end
 end

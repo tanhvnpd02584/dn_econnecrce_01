@@ -16,6 +16,7 @@ $color_leftwidget: #eff2f3;
 $color_filterwidget: #eeeeee;
 $color_filterwidget_slide: e8f0f2;
 $color_header_area: #ededed;
+$color_purchase: #f6f6f6;
 
 /*header*/
 body {
@@ -1538,4 +1539,10 @@ img {
   display: block;
   line-height: 38px;
   text-transform: uppercase
+}
+.product_top_bar {
+  background: $color_purchase;
+  clear: both;
+  display: flex;
+  padding: 10px 20px;
 }

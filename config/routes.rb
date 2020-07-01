@@ -6,17 +6,18 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :products, only: %i(show index)
     post "carts/:id/add", to: "carts#add_item", as: "cart_add_item"
-    delete "carts/:id/delte", to: "carts#remove_from_cart", as: "remove_from_cart"
+    delete "carts/:id/delete", to: "carts#remove_from_cart", as: "remove_from_cart"
     get "carts", to: "carts#index", as: "carts"
     get "/purchases", to: "purchases#new"
     resources :purchases, only: %i(new create)
+    resources :categories, only: :index
     namespace :admin do
       root "products#index"
       resources :products, only: :import do
         collection {post :import}
       end
       resources :products, except: %i(show destroy)
-      resources :purchases, only: :index
+      resources :purchases, only: %i(index update)
     end
   end
 end
