@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   private
 
   def find_category
-    @category = Category.find_by(params[:id])
+    @category = Category.find_by(id: params[:id])
     return if @category
 
     flash[:danger] = t "category.text_not_found"

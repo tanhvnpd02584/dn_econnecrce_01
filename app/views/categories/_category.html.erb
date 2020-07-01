@@ -1,3 +1,4 @@
 <ul class="list">
-  <li><%= link_to category.name, categories_path(id: category.id) %></li>
+  <li><%= link_to category.name, categories_path(id: category.id),
+    class: active_class(category.id)%></li>
 </ul>

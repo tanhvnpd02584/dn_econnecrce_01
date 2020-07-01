@@ -50,7 +50,7 @@ module SessionsHelper
 
   # duyet session to retrive id and quantity
   def find_product id
-    @product = Product.find_by(id)
+    @product = Product.find_by(id: id)
     return if @product
 
     flash[:danger] = t "products.text_error_not_found"
