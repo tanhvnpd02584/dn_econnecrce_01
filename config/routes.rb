@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     delete "carts/:id/delete", to: "carts#remove_from_cart", as: "remove_from_cart"
     get "carts", to: "carts#index", as: "carts"
     get "/purchases", to: "purchases#new"
-    resources :purchases, only: %i(new create)
+    resources :purchases, except: %i(home index destroy)
     resources :categories, only: :index
+    resources :users, only: %i(edit show update)
     namespace :admin do
       root "products#index"
       resources :products, only: :import do

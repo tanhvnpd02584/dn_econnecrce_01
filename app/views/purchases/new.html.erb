@@ -21,13 +21,15 @@
                 <h4><%=  t "checkout.title_product" %></h4>
               </li>
               <% session[:cart].each do |id, quantity| %>
-              <% find_product id %>
-              <li>
-                <p><%= @product.name %>
-                  <span class="middle"><%= quantity %></span>
-                  <span class="last"><%= number_to_currency(total(quantity, @product.unit_price))%></span>
-                </p>
-              </li>
+                <% find_product id %>
+                <li>
+                  <p><%= @product.name %>
+                    <span class="middle"><%= quantity %></span>
+                    <span class="last">
+                      <%= number_to_currency(total(quantity, @product.unit_price)) %>
+                    </span>
+                  </p>
+                </li>
               <% end %>
               <li>
                 <p><%= t "checkout.text_your_total" %>

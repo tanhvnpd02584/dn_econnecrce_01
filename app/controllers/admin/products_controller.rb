@@ -48,7 +48,7 @@ class Admin::ProductsController < AdminsController
   private
 
   def find_category
-    @category = Category.find_by(product_params[:category_id])
+    @category = Category.find_by(id: product_params[:category_id])
     return if @category
 
     flash[:danger] = t "products.text_error_category"

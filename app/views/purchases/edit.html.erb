@@ -1,0 +1,83 @@
+<% provide(:title, t("user_purchase.purchase_detail")) %>
+<section class="cart_area">
+  <div class="container">
+    <div class="cart_inner">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"><%= t "carts.text_column_image" %></th>
+              <th scope="col"><%= t "carts.text_column_name" %></th>
+              <th scope="col"><%= t "carts.text_column_price" %></th>
+              <th scope="col"><%= t "carts.text_column_quantity" %></th>
+              <th scope="col"><%= t "carts.text_column_total" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% detail_purchase @purchase %>
+            <% @detailpurchases.each do |detail| %>
+              <tr>
+                <td>
+                  <div class="media">
+                    <div class="d-flex">
+                      <%= image_tag detail.product.display_image if
+                        detail.product.image.attached? %>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p><%= detail.name %></p>
+                </td>
+                <td>
+                  <h5><%= number_to_currency(detail.unit_price) %></h5>
+                </td>
+                <td>
+                  <div class="product_count">
+                    <h3> <%= detail.quantity %></h>
+                  </div>
+                </td>
+                <td>
+                  <h5><%= number_to_currency(total(detail.quantity, detail.unit_price)) %></h5>
+                </td>
+              </tr>
+            <% end %>
+            <tr>
+              <td>
+                <h3><%= t "carts.text_subtotal" %></h3>
+              </td>
+              <td>
+                <h3><%= number_to_currency(total_purchase) %></h3>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3><%= t "user_purchase.text_created" %></h3>
+              </td>
+              <td>
+                <h3><%= ld @purchase.updated_at %></h3>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3><%= t "user_purchase.purchase_status" %></h3>
+              </td>
+              <td>
+                <h3><%= @purchase.status %></h3>
+              </td>
+              <td>
+                <% if @purchase.status == "pending" || @purchase.status == "confirmed" %>
+                  <%= form_for @purchase do |f| %>
+                    <%= f.hidden_field :status, value: 4 %>
+                    <%= f.submit t("user_purchase.btncancel"), class: "main_btn",
+                      data: {confirm: t("user_purchase.text_quest")} %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -5,9 +5,9 @@ class Purchase < ApplicationRecord
   # 1 puchase belongs to 1 user
   belongs_to :user
 
-  scope :sorted, ->{order :id}
+  scope :sorted, ->{order created_at: :desc}
 
-  enum status: {pending: 1, confirmed: 2, completed: 3, canceled: 4}
+  enum status: {pending: 1, confirmed: 2, completed: 3, canceled: 4, shipping: 5}
 
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/.freeze
 
