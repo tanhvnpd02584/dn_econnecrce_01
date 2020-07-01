@@ -4,16 +4,8 @@
   <td><%= purchase.phone_number %></td>
   <td><%= purchase.address %></td>
   <td><%= ld purchase.created_at %></td>
-  <% if purchase.status != true %>
-    <td><span class="status text-danger">&bull;</span><%= t "purchases.status_suspended" %></td>
-  <% else %>
-    <td><span class="status text-success">&bull;</span><%= t "purchases.status_active" %></td>
-  <% end %>
-  <td>
-    <% if purchase.status != true %>
-      <%= link_to t("purchases.column_edit"), admin_purchase_path(purchase.id), method: :patch, class: "settings" %>
-    <% else %>
-      <%= link_to t("purchases.column_un"), admin_purchase_path(purchase.id), method: :patch, class: "settings" %>
-    <% end %>
+  <td><span class="status text-danger">&bull;</span><%= purchase.status %></td>
+  <td><%= link_to t("purchases.column_edit"),
+    edit_admin_purchase_path(purchase.id), class: "settings" %>
   </td>
 </tr>

@@ -1,8 +1,6 @@
-<% if @products.any? %>
-  <div class="latest_product_inner">
-    <div class="row">
-      <%=  render @products %>
-      <%= will_paginate @products %>
-    </div>
+<div class="latest_product_inner">
+  <div class="row">
+    <%= render(@products) || t("products.text_error_not_found") %>
+    <%= will_paginate @products %>
   </div>
-<% end %>
+</div>

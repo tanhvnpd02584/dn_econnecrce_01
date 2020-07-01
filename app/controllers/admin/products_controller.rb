@@ -25,7 +25,8 @@ class Admin::ProductsController < AdminsController
   end
 
   def create
-    if @category.products.create product_params
+    @product = @category.products.build product_params
+    if @product.save
       flash[:success] = t "products.text_success_product"
       redirect_to admin_root_url
     else
@@ -36,7 +37,7 @@ class Admin::ProductsController < AdminsController
   def edit; end
 
   def update
-    if @product.update(product_params)
+    if @product.update product_params
       flash[:success] = t "edit_product.text_updated"
       redirect_to admin_root_url
     else

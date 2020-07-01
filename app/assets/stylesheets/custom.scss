@@ -405,6 +405,7 @@ ul {
   padding-top: 0px;
   padding-bottom: 15px
 }
+
 .l_w_title {
   padding-left: 30px;
   padding-right: 30px
@@ -426,12 +427,6 @@ ul {
   width: 100%;
   height: 1px;
   background: $color_hover
-}
-.p_filter_widgets .widgets_inner {
-  border-bottom: 1px solid $color_filterwidget
-}
-.p_filter_widgets .widgets_inner:last-child {
-  border-bottom: 0px
 }
 .p_filter_widgets .list li {
   margin-bottom: 18px
