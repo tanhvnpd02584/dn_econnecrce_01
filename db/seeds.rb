@@ -13,7 +13,7 @@ User.create!(name:  "Hoang Vu Nhat Tan",
 30.times do |n|
   name = Faker::Name.name
   address = Faker::Address.full_address
-  phone_number = Faker::PhoneNumber.phone_number
+  phone_number = "0941789420"
   email = Faker::Internet.email
   password = "foobar"
   User.create!(name: name,
@@ -47,14 +47,10 @@ end
 
 # generate bunch of purchase
 users = User.all
-name = Faker::Name.name
-address = Faker::Address.full_address
-phone_number = Faker::PhoneNumber.phone_number
-status  = Faker::Number.within(range: 1..3)
 2.times do |n|
   name = Faker::Name.name
   address = Faker::Address.full_address
-  phone_number = Faker::PhoneNumber.phone_number
+  phone_number = "0941789420"
   status  = Faker::Number.within(range: 1..3)
   users.each{|user| user.purchases.create!(
     name: name,

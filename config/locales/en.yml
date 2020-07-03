@@ -68,7 +68,6 @@ en:
     text_category_Guinness: "Guinness"
     text_category_Birra Moretti: "Birra Moretti"
     text_not_found: "Not found category"
-
   home_page:
     title_home: "Ecomerce web application"
     title_page: "Hot Beer 2020"
@@ -105,7 +104,7 @@ en:
     text_cfm: "Are you sure?"
     text_login_ples: "Please log in...."
     text_product_deleted: "Product deleted"
-    text_error_not_found: "Prodcucts not found"
+    text_error_not_found: "There is no products to display"
     text_btn_search: "Search"
   edit_product:
     text_title: "Edit"
@@ -131,8 +130,10 @@ en:
     text_delete: "Delete"
     text_subtotal: "Subtotal"
     text_checkout: "Checkout"
+    cart_added: "Added 1 product to your cart"
+    cart_removed: "removed 1 product from cart"
   checkout:
-    title: "Billing details"
+    title: "Here are your information do you want any changes? "
     place_holder: "Your name"
     shipping: "Shipping details"
     phone_number: "Phone Number"
@@ -154,13 +155,16 @@ en:
     column_address: "Address"
     column_create_at: "Created at"
     column_status: "Status"
-    column_edit: "Click to active"
+    column_edit: "Edit"
     column_un: "Click to unActive"
     status_suspended: "Unactive"
     status_active: "Actived"
     status_updated: "Purchase is updated"
     status_updated_unactive: "Purchase is unactived"
     status_cant_update: "Oops! can not update now"
+    title_edit: "Edit Purchase"
+    save_btn: "Save"
+    status_cant_update: "Sorry status can't update now"
   mail_order:
     title_mail: "Buy product from Cheers"
     mail_hi: "Hi"
@@ -178,6 +182,12 @@ en:
           quantity: "Quantity"
           unit_price: "Price"
           category: "Category"
+        purchase:
+          name: "Name:"
+          address: "Address:"
+          Phone_number: "Phone Number:"
+          status: "Status purchase"
+          created_at: "Created at:"
   errors_messages:
     text_error_form: "The form contains"
     text_error: "error"
@@ -187,11 +197,11 @@ en:
         user: # or namespace/model_name
           attributes:
             email:
-              bad_email: "email can't be more than 255 character, should be omgod234@gmail.com"
+              bad_email: "Can't be more than 255 character, should be omgod234@gmail.com"
             name:
-              bad_name: "Name can't be more than 50 character"
+              bad_name: "Can't be more than 50 character"
             phone_number:
-              bad_phone_number: "Phone number has >=10 and <= 11 character, should be 0941789420"
+              bad_phone_number: "should more than 10 and less than 11 character"
         product:
           attributes:
             name:
@@ -202,11 +212,11 @@ en:
         purchase:
           attributes:
             name:
-              bad_name: "Name can't be more than 50 character"
+              bad_name: "Can't be more than 50 character"
             phone_number:
-              bad_phone_number: "Phone number has >=10 and <= 11 character, should be 0941789420"
+              bad_phone_number: "Should more than 10 and less than 11 character"
             address:
-              bad_address: "Address must details, shoud be 08 ha van tinh, lien chieu, da nang"
+              bad_address: "Must details, shoud be 08 ha van tinh, lien chieu, da nang"
   number:
      currency:
         format:

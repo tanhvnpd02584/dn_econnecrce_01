@@ -1,4 +1,7 @@
 vi:
+  dates:
+    formats:
+      date_month_year_concise: '%d-%m-%y'
   admin:
     title_login: "login"
     title: "Admin Beers"
@@ -9,10 +12,12 @@ vi:
     text_menu_request: "Request manager"
     text_button_log_out: "Logout"
     text_welcom_admin: "Welcom Admin"
+  admin_purchases:
+    text_export: "Export excel"
   admin_products:
     title_table: "Product Management"
     text_button_add: "Add new product"
-    text_button_export: "Export to excel"
+    text_button_import: "Import from excel"
     text_dau: "#"
     text_name: "Name"
     text_category: "Category"
@@ -20,6 +25,8 @@ vi:
     text_quantity: "Quantity"
     text_descriptiom: "Description"
     text_edit: "Edit"
+    text_imported: "Data Imported"
+    text_error_excel: "Can't not import"
   login:
     text_login_failed: "Login failed invalid username or password"
     text_login_not_found: "User not found"
@@ -33,7 +40,7 @@ vi:
     text_menu_home: "Home"
     text_menu_category: "Category"
     text_menu_page: "Pages"
-    text_menu_contact: "Contact"
+    text_menu_contact: "Your cart"
     main_title: "Cheers"
     text_link_log_out: "Log out"
     text_link_log_in: "Login"
@@ -60,6 +67,7 @@ vi:
     text_category_Quimes: "Beer Quimes"
     text_category_Guinness: "Guinness"
     text_category_Birra Moretti: "Birra Moretti"
+    text_not_found: "Not found category"
   home_page:
     title_home: "Ecomerce web application"
     title_page: "Hot Beer 2020"
@@ -85,6 +93,7 @@ vi:
     text_button_add: "Add"
     text_success_product: "Product added"
     text_select: "Select a category"
+    text_error_category: "Category not found"
     text_usd: "USD"
     text_edit: "Edit"
     text_delete: "Delete"
@@ -92,12 +101,79 @@ vi:
     text_showing: "Showing"
     text_out_of: "Out of"
     text_record: "Records"
+    text_cfm: "Are you sure?"
+    text_login_ples: "Please log in...."
+    text_product_deleted: "Product deleted"
+    text_error_not_found: "There is no products to display"
+    text_btn_search: "Search"
   edit_product:
     text_title: "Edit"
     text_button_save: "Save"
     text_title_form: "Edit product"
     text_updated: "Updated"
     text_error_not_found: "User not found"
+  products_user:
+    text_btn_add: "Add to cart"
+  product_detail:
+    title_page: "Product Details"
+  carts:
+    error_not_found_item: "not found item"
+    text_cart_title: "Carts"
+    text_column_image: "Image"
+    text_column_name: "Name"
+    text_column_price: "Price"
+    text_column_quantity: "Quantity"
+    text_column_total: "Total"
+    text_column_edit: "Edit"
+    cart_increse: "+"
+    cart_sub: "-"
+    text_delete: "Delete"
+    text_subtotal: "Subtotal"
+    text_checkout: "Checkout"
+    cart_added: "Added 1 product to your cart"
+    cart_removed: "removed 1 product from cart"
+  checkout:
+    title: "Here are your information do you want any changes? "
+    place_holder: "Your name"
+    shipping: "Shipping details"
+    phone_number: "Phone Number"
+    title_order: "Your Order"
+    title_product: "Product"
+    title_total: "Total"
+    title_page: "Check out"
+    text_your_total: "Your total"
+    error_cart_empty: "Your cart is empty please shopping more"
+    add_success: "Purchase is created"
+    btn_preceed: "Proceed to Paypal"
+    errors_save: "Oops! can't not create purchaes sorry: %{err}"
+  purchases:
+    title: "Purchases"
+    title_page: "Purchases Management"
+    column_dau: "#"
+    column_name: "Name"
+    column_phone_number: "Phone number"
+    column_address: "Address"
+    column_create_at: "Created at"
+    column_status: "Status"
+    column_edit: "Edit"
+    column_un: "Click to unActive"
+    status_suspended: "Unactive"
+    status_active: "Actived"
+    status_updated: "Purchase is updated"
+    status_updated_unactive: "Purchase is unactived"
+    status_cant_update: "Oops! can not update now"
+    title_edit: "Edit Purchase"
+    save_btn: "Save"
+    status_cant_update: "Sorry status can't update now"
+  mail_order:
+    title_mail: "Buy product from Cheers"
+    mail_hi: "Hi"
+    mail_thanks: "Thanks for your beliving with our store ! love you"
+    your_order: "Your order is:"
+    products: "Product name: %{name}"
+    quantity: "Quantity: %{quantity}"
+    unit_price: "Unit_price: %{price}"
+    total: "Total: %{total}"
   activerecord:
     models:
       attributes:
@@ -106,6 +182,12 @@ vi:
           quantity: "Quantity"
           unit_price: "Price"
           category: "Category"
+        purchase:
+          name: "Name:"
+          address: "Address:"
+          Phone_number: "Phone Number:"
+          status: "Status purchase"
+          created_at: "Created at:"
   errors_messages:
     text_error_form: "The form contains"
     text_error: "error"
@@ -115,11 +197,11 @@ vi:
         user: # or namespace/model_name
           attributes:
             email:
-              bad_email: "email can't be more than 255 character, should be omgod234@gmail.com"
+              bad_email: "Can't be more than 255 character, should be omgod234@gmail.com"
             name:
-              bad_name: "Name can't be more than 50 character"
+              bad_name: "Can't be more than 50 character"
             phone_number:
-              bad_phone_number: "Phone number has >=10 and <= 11 character, should be 0941789420"
+              bad_phone_number: "should more than 10 and less than 11 character"
         product:
           attributes:
             name:
@@ -127,3 +209,25 @@ vi:
             image:
               bad_image: "Image should less than 5MB"
 
+        purchase:
+          attributes:
+            name:
+              bad_name: "Can't be more than 50 character"
+            phone_number:
+              bad_phone_number: "Should more than 10 and less than 11 character"
+            address:
+              bad_address: "Must details, shoud be 08 ha van tinh, lien chieu, da nang"
+  number:
+     currency:
+        format:
+          unit: "USD"
+          delimiter: ","
+          separator: "."
+          precision: 2
+          format: "%u%n"
+  helpers:
+    placeholder:
+      purchase:
+        name: "Enter your name"
+        phone_number: "Enter your phone number"
+        address: "Note your address here"

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
         collection {post :import}
       end
       resources :products, except: %i(show destroy)
-      resources :purchases, only: %i(index update)
+      resources :purchases, only: %i(index edit update)
     end
   end
 end

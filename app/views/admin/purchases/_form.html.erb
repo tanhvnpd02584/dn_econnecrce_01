@@ -1,0 +1,35 @@
+<%= form_for [:admin, @purchase] do |f| %>
+  <%= render "admin/shared/error_messages", object: f.object%>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, id: :name,
+      disabled: true, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.collection_select :status, Purchase.statuses.to_a,
+      :second, :first, {prompt: t("products.text_select")},
+      {class: "form-control"} %>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, id: :phone_number,
+          disabled: true, class: "form-control" %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= f.label :updated_at %>
+        <%= f.text_field :updated_at, value: ld(@purchase.updated_at),
+          disabled: true, class: "form-control" %>
+      </div>
+    </div>
+  </div>  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, id: :address,
+      disabled: true, class: "form-control" %>
+  </div>
+  <%= f.submit t("purchases.save_btn"), class: "btn btn-primary" %>
+<% end %>

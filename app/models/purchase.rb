@@ -7,6 +7,8 @@ class Purchase < ApplicationRecord
 
   scope :sorted, ->{order :id}
 
+  enum status: {pending: 1, confirmed: 2, completed: 3, canceled: 4}
+
   VALID_PHONE_NUMBER_REGEX = /\d[0-9]\)*\z/.freeze
 
   validates :name, length: {maximum: Settings.name_maximum,
