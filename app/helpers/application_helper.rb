@@ -11,4 +11,8 @@ module ApplicationHelper
   def ld dtf
     localize_datetime(dtf)
   end
+
+  def active_class category_id
+    params[:id].to_i == category_id ? "link_select" : ""
+  end
 end

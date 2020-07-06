@@ -18,6 +18,11 @@ $color_filterwidget_slide: e8f0f2;
 $color_header_area: #ededed;
 $color_purchase: #f6f6f6;
 
+.active {
+  color: $color_body;
+  font-size: 14px
+}
+
 /*header*/
 body {
   line-height: 24px;
@@ -433,7 +438,7 @@ ul {
 }
 .p_filter_widgets .list li a {
   padding-left: 30px;
-  font-size: 14px;
+  font-size: 20px;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   color: $color_body;
@@ -449,6 +454,10 @@ ul {
   left: 0px;
   top: 4px;
   transition: all 300ms linear 0s
+}
+
+.link_select{
+background: $color_hover;
 }
 .p_filter_widgets .list li a:after {
   content: "";

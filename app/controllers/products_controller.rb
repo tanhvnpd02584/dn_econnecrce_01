@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
   private
 
   def find_product
-    @product = Product.find_by(params[:id])
+    @product = Product.find_by(id: params[:id])
     return if @product
 
     flash[:danger] = t "products.text_error_not_found"

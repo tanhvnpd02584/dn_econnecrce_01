@@ -12,7 +12,7 @@
       <div class="col-lg-5 offset-lg-1">
         <div class="s_product_text">
           <h3><%= @product.name %></h3>
-          <h2><%= @product.unit_price %></h2>
+          <h2><%= number_to_currency(@product.unit_price) %></h2>
           <ul class="list">
             <li>
               <a class="active" href="#"><span>Category</span>: <%= @product.category.name %></a>
@@ -21,18 +21,6 @@
           <p>
             <%= @product.description%>
           </p>
-          <div class="product_count">
-            <label for="qty">Quantity</label>
-            <input
-            type="text"
-            name="qty"
-            id="sst"
-            maxlength="12"
-            value="1"
-            title="Quantity:"
-            class="input-text qty"/>
-            <label for="qty">Quantity</label>
-          </div>
           <div class="card_area">
             <a class="main_btn" href="#">Add to Cart</a>
           </div>

@@ -8,80 +8,24 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-lg-6">
-    <div class="new_product">
-      <h5 class="text-uppercase"><%= t "home_page.title_subtitle" %></h5>
-      <h3 class="text-uppercase"><%= t "home_page.title_des" %></h3>
-      <div class="product-img">
-        <img class="img-fluid" src="img/product/new-product/new-product1.png" alt="" />
-      </div>
-      <h4><%= t "home_page.text_price" %></h4>
-      <li><%= link_to t("home_page.btn_addcart"), "#", class: "main_btn" %></li>
-    </div>
-  </div>
-  <div class="col-lg-6 mt-5 mt-lg-0">
-    <div class="row">
-      <div class="col-lg-6 col-md-6">
-        <div class="single-product">
+  <% if @products.any? %>
+    <% @products.each do |product|%>
+      <div class="col-lg-6">
+        <div class="new_product">
+          <h5 class="text-uppercase"><%= t "home_page.title_subtitle" %></h5>
+          <h3 class="text-uppercase"><%= product.name %></h3>
           <div class="product-img">
-            <img class="img-fluid w-100" src="img/product/new-product/n1.jpg" alt="" />
+            <% if product.image.attached? %>
+              <%= image_tag(product.image, class: "img-fluid") %>
+            <% end %>
           </div>
-          <div class="product-btm">
-            <a href="#" class="d-block">
-              <h4><%= t "home_page.text_product" %></h4>
-            </a>
-            <div class="mt-3">
-              <span class="mr-4"><%= t "home_page.text_price" %></span>
-              <del><%= t "home_page.text_price" %></del>
-            </div>
-          </div>
+          <h4><%= product.description %></h4>
+          <h4><%= number_to_currency(product.unit_price) %></h4>
+          <li><%= link_to t("home_page.btn_addcart"),
+            cart_add_item_path(product.id), method: :post, class: "main_btn" %>
+          </li>
         </div>
       </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="single-product">
-          <div class="product-img">
-            <img class="img-fluid w-100" src="img/product/new-product/n2.jpg" alt="" />
-          </div>
-          <div class="product-btm">
-            <a href="#" class="d-block">
-             <h4><%= t "home_page.text_product" %></h4>
-           </a>
-           <div class="mt-3">
-            <span class="mr-4"><%= t "home_page.text_price" %></span>
-            <del><%= t "home_page.text_price" %></del>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 col-md-6">
-      <div class="single-product">
-        <div class="product-img">
-          <img class="img-fluid w-100" src="img/product/new-product/n3.jpg" alt="" />
-        </div>
-        <div class="product-btm">
-          <a href="#" class="d-block">
-           <h4><%= t "home_page.text_product" %></h4>
-         </a>
-         <div class="mt-3">
-          <span class="mr-4"><%= t "home_page.text_price" %></span>
-          <del><%= t "home_page.text_price" %></del>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-6 col-md-6">
-    <div class="single-product">
-      <div class="product-img">
-        <img class="img-fluid w-100" src="img/product/new-product/n4.jpg" alt="" />
-      </div>
-      <div class="product-btm">
-        <a href="#" class="d-block">
-         <h4><%= t "home_page.text_product" %></h4>
-       </a>
-       <div class="mt-3">
-        <span class="mr-4"><%= t "home_page.text_price" %></span>
-        <del><%= t "home_page.text_price" %></del>
-      </div>
-    </div>
-  </div>
+    <% end %>
+  <% end %>
 </div>

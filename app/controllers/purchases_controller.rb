@@ -1,7 +1,5 @@
 class PurchasesController < ApplicationController
-  before_action :logged_in_user, only: %i(create new)
-  before_action :cart_is_empty?, only: %i(create new)
-  before_action :find_purchase, only: :update
+  before_action :logged_in_user, :cart_is_empty?, only: %i(create new)
 
   def new
     @purchase = Purchase.new
