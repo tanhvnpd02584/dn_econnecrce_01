@@ -1,0 +1,9 @@
+<tr>
+  <td class="center"><% detail_purchase purchase %></td>
+  <td class="left"><%= ld purchase.created_at %></td>
+  <td class="left"> <%= quantity_purchase %></td>
+  <td class="right"><%= number_to_currency(total_purchase) %></td>
+  <td class="right"><%= purchase.status %></td>
+  <td class="center"><%= link_to t("profile.link_to_edit"),
+    edit_purchase_path(purchase.id) %></td>
+</tr>

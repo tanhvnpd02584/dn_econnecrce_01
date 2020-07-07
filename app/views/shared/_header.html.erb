@@ -12,7 +12,7 @@
           <div class="float-right">
             <ul class="right_side">
               <% if logged_in? %>
-              <li><%= link_to current_user.name, "#" %></li>
+              <li><%= link_to current_user.name, user_path(current_user.id) %></li>
               <li><%= link_to t("layout_header.text_link_log_out"), logout_path, method: :delete %></li>
               <% else %>
               <li><%= link_to t("layout_header.text_link_log_in"), login_path %></li>
@@ -41,7 +41,7 @@
                    <%= link_to t("layout_header.text_menu_category"), products_path, class: "nav-link" %>
                  </li>
                  <li class="nav-item">
-                  <%= link_to t("layout_header.text_menu_contact"), carts_path, class: "nav-link" %>
+                  <%= link_to t("layout_header.text_menu_cart"), carts_path, class: "nav-link" %>
                 </li>
               </ul>
             </div>

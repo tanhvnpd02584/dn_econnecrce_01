@@ -14,6 +14,7 @@ file_accept_excel: "file/xlsx"
 file_valid: ["image/jpeg", "image/gif", "image/png"]
 per_page: 12
 per_page_user: 9
+per_page_purchase: 9
 image_display: 200
 format_xls: "xls"
 excel: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"

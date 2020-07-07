@@ -1,5 +1,7 @@
 class PurchasesController < ApplicationController
-  before_action :logged_in_user, :cart_is_empty?, only: %i(create new)
+  before_action :logged_in_user, except: %i(home index destroy)
+  before_action :cart_is_empty?, only: %i(create new)
+  before_action :find_purchase, only: %i(edit update)
 
   def new
     @purchase = Purchase.new
@@ -22,7 +24,26 @@ class PurchasesController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    @purchase.update! status: purchase_params[:status].to_i
+    flash[:success] = t "purchases.status_updated"
+    redirect_to edit_purchase_path
+  rescue => e
+    flash[:danger] = t "purchases.status_cant_update"
+    redirect_to edit_purchase_path
+  end
+
   private
+
+  def find_purchase
+    @purchase = current_user.purchases.find_by(id: params[:id])
+    return if @purchase
+
+    flash[:danger] = t "user_purchase.purchase_not_found"
+    redirect_to user_path
+  end
 
   # insert details purchase in to details purchase
   def add_products_to_detailspurchase purchase_id
@@ -45,6 +66,6 @@ class PurchasesController < ApplicationController
 
   # params purchases
   def purchase_params
-    params.require(:purchase).permit(:name, :phone_number, :address)
+    params.require(:purchase).permit(:name, :phone_number, :address, :status)
   end
 end

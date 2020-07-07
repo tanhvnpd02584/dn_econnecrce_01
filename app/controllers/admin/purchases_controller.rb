@@ -1,5 +1,5 @@
 class Admin::PurchasesController < AdminsController
-  before_action :find_purchase, only: %i(edit update)
+  before_action :find_purchase, :logged_in_user, only: %i(edit update)
 
   def index
     @purchases = Purchase.sorted

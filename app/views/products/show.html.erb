@@ -22,7 +22,8 @@
             <%= @product.description%>
           </p>
           <div class="card_area">
-            <a class="main_btn" href="#">Add to Cart</a>
+            <%= link_to t("products_user.text_btn_add"),
+              cart_add_item_path(@product.id), method: :post, class: "main_btn" %>
           </div>
         </div>
       </div>

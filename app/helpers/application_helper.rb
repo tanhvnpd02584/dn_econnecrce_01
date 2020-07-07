@@ -15,4 +15,18 @@ module ApplicationHelper
   def active_class category_id
     params[:id].to_i == category_id ? "link_select" : ""
   end
+
+  def detail_purchase purchase
+    @detailpurchases = purchase.detailpurchases
+  end
+
+  def quantity_purchase
+    @detailpurchases.reduce(0){|total, detail| total + detail.quantity}
+  end
+
+  def total_purchase
+    @detailpurchases.inject(0) do |tmp, detail|
+      tmp += detail.quantity * detail.product.unit_price
+    end
+  end
 end
